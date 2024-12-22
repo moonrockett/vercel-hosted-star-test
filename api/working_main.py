@@ -16,7 +16,15 @@ from telegram.ext import (
     filters,
     ConversationHandler
 )
-from database import init_db, increment_referral_count, get_referral_count, get_usage_stats, cleanup_old_stats, get_unique_users_count, add_new_user
+from .database import (
+    init_db, 
+    increment_referral_count, 
+    get_referral_count, 
+    get_usage_stats, 
+    cleanup_old_stats, 
+    get_unique_users_count, 
+    add_new_user
+)
 from fastapi import FastAPI
 
 """
