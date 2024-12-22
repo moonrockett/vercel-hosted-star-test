@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 logger = logging.getLogger(__name__)
 
 # Database path - store in api directory for Vercel
-DB_PATH = os.path.join('api', 'bot.db')
+DB_PATH = 'bot.db'
 
 def init_db():
     """Initialize the database with required tables."""
