@@ -17,6 +17,7 @@ from telegram.ext import (
     ConversationHandler
 )
 from database import init_db, increment_referral_count, get_referral_count, get_usage_stats, cleanup_old_stats, get_unique_users_count, add_new_user
+from fastapi import FastAPI
 
 """
 Telegram Star Shop Bot - Main Bot File
@@ -386,11 +387,3 @@ async def stats(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             )
         except Exception as reply_error:
             logger.error(f"Could not send error message: {reply_error}")
-
-if __name__ == '__main__':
-    try:
-        asyncio.run(main())
-    except KeyboardInterrupt:
-        logger.info("Bot stopped by user")
-    except Exception as e:
-        logger.error(f"Bot stopped due to error: {e}")
